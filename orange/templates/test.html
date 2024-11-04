@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate NSD</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/OBS_logo.png' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'css/test.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/OBS_logo.png' %}" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                <span style="color: white; font-weight: bolder; margin-left: 10px;">UCPE - Generate NSD</span>
+            </a>
+        </div>
+    </nav>
+    {% if apimessage and apimessage != "NSD published successfully." %}
+    <div class="form-test alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{apimessage}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% elif apimessage and apimessage == "NSD published successfully." %}
+    <div class="form-test alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{apimessage}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endif %}
+    
+    {% if msg %}
+    <div class="alert alert-danger" role="alert">
+        {{msg}}
+      </div>
+    {% endif %}
+    <form class="form-test row g-3 ml-4" method="POST">
+        {% csrf_token %}
+
+        <!-- START :  NSD GENERAL INFO -->
+
+        <h1>NSD</h1>
+        <hr class="hr-space">
+        <div class="col-md-6">
+            <label for="nsdName" class="form-label">Name<span style="color: #ff7900;">*</span></label>
+            <input type="text" class="form-control" name="nsdName" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+            <label for="nsdVersion" class="form-label">Version<span style="color: #ff7900;">*</span></label>
+            <input type="text" class="form-control" name="nsdVersion" id="inputPassword4">
+        </div>
+        <div class="col-12">
+            <label for="nsdDescription" class="form-label">Description</label>
+            <input type="text" class="form-control" id="inputAddress" name="nsdDescription">
+        </div>
+        <div class="col-md-6">
+            <label for="size" class="form-label">Choose type<span style="color: #ff7900;">*</span></label>
+            <select id="size" class="form-select" name="type">
+                <option value="small">Small (max memory = 13 Gib max cpu = 6)</option>
+                <option value="medium">Medium (max memory = 28.5 Gib max cpu = 14)</option>
+                <option value="large">Large (max memory = 60 Gib max cpu = 21)</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vlan_option" id="exampleRadios1" value="with">
+                <label class="form-check-label" for="with_vlan">
+                    with VLAN
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vlan_option" id="exampleRadios2" value="without" checked>
+                <label class="form-check-label" for="whitout_vlan">
+                    whitout VLAN
+                </label>
+            </div>
+        </div>
+
+
+        <!-- END :  NSD GENERAL INFO -->
+
+
+        <!-- START : VNF INFO -->
+        <h1>VNFs</h1>
+        <hr class="hr-space">
+        <div class="col-md-6">
+            <label for="num" class="form-label">Number of VNFs<span style="color: #ff7900;">*</span></label>
+            <input class="form-control" type="text" name="num" id="num"><br>
+            <button class="btn btn-primary" id="generateButton">Generate VNF</button>
+        </div>
+        <br>
+
+        <div id="subformContainer" class="row"> 
+        </div>
+        <!-- END : VNF INFO -->
+
+        <br>
+        <hr>
+        
+        <div class="col-6">
+            <button name="export" value="export" type="submit" class="btn btn-danger btn-lg">Export</button>
+        </div>
+
+        <div class="col-6">
+            <button name="apply_DS" type="submit" value="apply to DS" class="btn btn-success btn-lg">Apply to
+                MANO</button>
+        </div>
+
+    </form>
+
+    <link href="{% static 'js/bootstrap.bundle.min.js' %}" rel="stylesheet" media="all">
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#generateButton").click(function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                var num = parseInt($("#num").val());
+                var subformContainer = $("#subformContainer");
+
+                if (num > 4) {
+                    alert("vnf are limited to 4");
+                } else {
+                    subformContainer.empty();
+                    for (var i = 0; i < num; i++) {
+                        var subform = `
+    
+<h2 class="title mt-2">VNF ${i + 1}</h2>
+
+
+    <div class="subform col-md-6">
+        <label for="subform-field-${i}">VNF name<span style="color: #ff7900;">*</span></label>
+        <input class="form-control" type="text" name="name${i}"><br><br>
+    </div>
+    <div class="subform col-md-6">
+        <label for="subform-field-${i}">persistence-id<span style="color: #ff7900;">*</span></label>
+        <input class="form-control" type="text" name="persistence-id${i}"><br><br>
+    </div>
+    <div class="subform col-md-6">
+        <label for="subform-field-${i}">Location<span style="color: #ff7900;">*</span></label>
+        <input class="form-control" type="text" name="location${i}"><br><br>
+    </div>
+
+
+    <div class="subform col-md-6">
+        <label for="subform-field-${i}">Memory (GiB)<span style="color: #ff7900;">*</span></label>
+        <input class="form-control" type="number" name="memory${i}"><br><br>
+    </div>
+    <div class="subform col-md-6">
+        <label for="subform-field-${i}">CPUs<span style="color: #ff7900;">*</span></label>
+        <input class="form-control" type="number" name="cpu${i}"><br><br>
+    </div>
+    <div class="subform col-md-6">
+        <label for="subform-field-${i}">Bus<span style="color: #ff7900;">*</span></label>
+        <select class="form-select" name="bus${i}">
+            <option value="virtio">Virtio</option>
+            <option value="sata">Sata</option>
+            <option value="scsi">Scsi</option>
+            <option value="ide">Ide</option>
+        </select>
+    </div>
+
+                    <h2 class="title">Cloud-init Details</h2>
+                            <div class="col-6">
+                                    <label for="numCloud${i}">Number of Cloud-init</label>
+                                    <input class="form-control" type="text" name="numCloud${i}" id="numCloud${i}"><br>
+                                    <button class="btn btn-primary generateCloudButton" data-index="${i}">Generate Cloud Init</button>
+                            </div>
+                        </div>
+                        <div id="cloudContainer${i}" class="row">
+                        </div>
+                    `;
+
+                        subformContainer.append(subform);
+                    }
+                }
+            });
+
+            $(document).on("click", ".generateCloudButton", function (event) {
+                event.preventDefault();
+                var vnfIndex = $(this).data("index");
+                var numCloud = parseInt($(`#numCloud${vnfIndex}`).val());
+                var cloudContainer = $(`#cloudContainer${vnfIndex}`);
+                cloudContainer.empty();
+                for (var i = 0; i < numCloud; i++) {
+                    var cloudSubform = `
+                    <h2 class="title">Cloud-init ${i + 1} for VNF ${vnfIndex + 1}</h2>
+                        <div class="col-6">
+                                <label for="Cloud-init-path-${vnfIndex}-${i}">Cloud-init path:</label>
+                                <input class="form-control" type="text" name="Cloud-init-path-${vnfIndex}-${i}"><br><br>
+                            
+                        </div>
+                        <div class="col-6">
+                                <label for="Cloud-init-content-${vnfIndex}-${i}">Cloud-init content:</label>
+                                <input class="form-control" type="text" name="Cloud-init-content-${vnfIndex}-${i}">
+                            
+                        </div>
+                    </div>
+                `;
+                    cloudContainer.append(cloudSubform);
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

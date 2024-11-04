@@ -1,0 +1,699 @@
+{
+    "version": "1.0",
+    "nsd": {
+        "version": 4,
+        "properties": {
+            "name": "vnf3_withoutVlan12",
+            "version": "1",
+            "description": "",
+            "software": [
+                "DM33:3.3.3+",
+                "DM33:3.4.1+"
+            ],
+            "hardware": [
+                "OVP-E7",
+                "OVP-408",
+                "OVP-416"
+            ]
+        }
+    },
+    "general": {
+        "id": {
+            "value": "vnf_name_3int_init"
+        },
+        "description": {
+            "value": "3 VNF avec 3 Interfaces pour chacune"
+        },
+        "open-vswitch": {
+            "pmd-cpu-mask": {
+                "value": 2
+            }
+        }
+    },
+    "objects": [
+        {
+            "type": {
+                "value": "ovp"
+            },
+            "autoconf": {
+                "polling-period": {
+                    "value": "14400",
+                    "nsd": "1"
+                },
+                "retry-count": {
+                    "value": "10",
+                    "nsd": "1"
+                },
+                "retry-delay": {
+                    "value": "300",
+                    "nsd": "1"
+                },
+                "authentication-method": {
+                    "value": "sn-password"
+                },
+                "ignore-cert-check": {
+                    "value": true
+                },
+                "manager": {
+                    "items": [
+                        {
+                            "name": {
+                                "value": "OneManage"
+                            },
+                            "url": {
+                                "value": "https://onemanage.archives.lab/OneManage/bootstrap/server.php"
+                            }
+                        }
+                    ],
+                    "nsd": "2"
+                }
+            },
+            "dns": {
+                "domain-name": {
+                    "value": "archives.lab",
+                    "nsd": "2"
+                },
+                "name-server1-ip-address": {
+                    "value": "10.253.56.138",
+                    "nsd": "2"
+                }
+            },
+            "ntp": {
+                "ntpserver1-host": {
+                    "value": "10.253.56.161",
+                    "nsd": "2"
+                }
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_ovp"
+                        },
+                        "use-dhcp": {
+                            "value": 1,
+                            "nsd": "1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth5"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth2"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "NET_wan"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_ovp"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "3999",
+                            "nsd": "2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_eth5"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_0"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "4006",
+                            "nsd": "2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_1"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "4008",
+                            "nsd": "2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf2_0"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "4006",
+                            "nsd": "2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf2_1"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "4008",
+                            "nsd": "2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf3_0"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "4006",
+                            "nsd": "2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf3_1"
+                        },
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "2"
+                        },
+                        "tag": {
+                            "value": "4008",
+                            "nsd": "2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "NET_lan"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf1_2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf2_2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf3_2"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_eth2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf1_name_3int_init"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf1_name",
+                "nsd": "1"
+            },
+            "qemu-option": {
+                "value": "",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "1",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "GiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough"
+            },
+            "cpu-pinning": {
+                "items": [
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "disk-label": {
+                    "value": "cidata"
+                },
+                "bus": {
+                    "value": "bus-type-ide"
+                },
+                "use-iso-disk-label": {
+                    "value": false
+                },
+                "pathnames": {
+                    "items": [
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https://10.253.56.133/vnf1.qcow2"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "System"
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf1_0"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth5"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_1"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth5"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_2"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth2"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf2_name_3int_init"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf2_name",
+                "nsd": "1"
+            },
+            "qemu-option": {
+                "value": "",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "1",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "GiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough"
+            },
+            "cpu-pinning": {
+                "items": [
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "disk-label": {
+                    "value": "cidata"
+                },
+                "bus": {
+                    "value": "bus-type-ide"
+                },
+                "use-iso-disk-label": {
+                    "value": false
+                },
+                "pathnames": {
+                    "items": [
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https://10.253.56.133/vnf2.qcow2"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "System"
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf2_0"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth5"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf2_1"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth5"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf2_2"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth2"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf3_name_3int_init"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf3_name",
+                "nsd": "1"
+            },
+            "qemu-option": {
+                "value": "",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "1",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "GiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough"
+            },
+            "cpu-pinning": {
+                "items": [
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "disk-label": {
+                    "value": "cidata"
+                },
+                "bus": {
+                    "value": "bus-type-ide"
+                },
+                "use-iso-disk-label": {
+                    "value": false
+                },
+                "pathnames": {
+                    "items": [
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https://10.253.56.133/vnf3.qcow2"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "System"
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf3_0"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth5"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf3_1"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth5"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf3_2"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "master-interface": {
+                            "value": "eth2"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

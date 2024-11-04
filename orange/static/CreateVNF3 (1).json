@@ -1,0 +1,828 @@
+    "objects": [
+{
+           "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf2"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf220230724205227",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "4608",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "MiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "4",
+                "nsd": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough",
+                "nsd": "1"
+            },
+            "cpu-pinning": {
+                "items": [
+                    {
+                        "id": {
+                            "value": 0
+                        },
+                        "cpuset": {
+                            "value": "4"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 1
+                        },
+                        "cpuset": {
+                            "value": "5"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 2
+                        },
+                        "cpuset": {
+                            "value": "16"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 3
+                        },
+                        "cpuset": {
+                            "value": "17"
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "pathnames": {
+                    "items": [
+                        {
+                            "location": {
+                                "value": "\/openstack\/latest\/user_data"
+                            },
+                            "template-definition": {
+                                "value": "base64_encoded_content"
+                            },
+                            "template-content": {
+                                "value": "CiNWTSBjb25maWcgZmlsZQpjb25maWcgdGVybWluYWwKY3J5cHRvIGtleSBnZW5lcmF0ZSBkc2EgMjA0OCBuby1jb25maXJtCmlwIHNzaCBlbmFibGUKYmluZCBzc2ggZ2lnYWJpdGV0aGVybmV0IDAvMC4zOTk4CmlwIHNzaCBhdXRoLW1ldGhvZCBhdXRvbWF0aWMKaXAgc3NoIGF1dGgtcmV0cmllcyAzCmlwIHNzaCBhdXRoLXRpbWVvdXQgMzAKaXAgc3NoIHRpbWVvdXQgNjAwCmhvc3RuYW1lICJla2kyIgppbnRlcmZhY2UgZ2lnYWJpdGV0aGVybmV0IDAvMC4zOTk4CiBlbmNhcHN1bGF0aW9uIGRvdDFxIDM5OTgKIGlwIGFkZHJlc3MgMTMuMTMuMTMuMiAyNTUuMjU1LjI1NS4wCmV4aXQKaXAgcm91dGUgMC4wLjAuMCAwLjAuMC4wIDEzLjEzLjEzLjQKCg=="
+                            }
+                        }
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab:444\/p-qhbkj-vnf-ucpeos\/OneOS-vCPE-x86_pi1-6.6.1m2.qcow2"
+                        },
+                        "checksum-type": {
+                            "value": "sha256"
+                        },
+                        "checksum": {
+                            "value": "835d157c8ca3a277b17140efd856b137b78e7290cd90c89b77236c616ecba195"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "Diskvnf"
+                        },
+                        "include-in-snapshot": {
+                            "value": 1
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                     }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf2_ge_0_0"
+                        },
+                        "master-interface": {
+                            "value": "eth3"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf3"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf320230724205731",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "4608",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "MiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "4",
+                "nsd": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough",
+                "nsd": "1"
+            },
+            "cpu-pinning": {
+                "items": [
+                    {
+                        "id": {
+                            "value": 0
+                        },
+                        "cpuset": {
+                            "value": "6"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 1
+                        },
+                        "cpuset": {
+                            "value": "7"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 2
+                        },
+                        "cpuset": {
+                            "value": "18"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 3
+                        },
+                        "cpuset": {
+                            "value": "19"
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "pathnames": {
+                    "items": [
+                        {
+                            "location": {
+                                "value": "\/openstack\/latest\/user_data"
+                            },
+                            "template-definition": {
+                                "value": "base64_encoded_content"
+                            },
+                            "template-content": {
+                                "value": "CiNWTSBjb25maWcgZmlsZQpjb25maWcgdGVybWluYWwKY3J5cHRvIGtleSBnZW5lcmF0ZSBkc2EgMjA0OCBuby1jb25maXJtCmlwIHNzaCBlbmFibGUKYmluZCBzc2ggZ2lnYWJpdGV0aGVybmV0IDAvMAppcCBzc2ggYXV0aC1tZXRob2QgYXV0b21hdGljCmlwIHNzaCBhdXRoLXJldHJpZXMgMwppcCBzc2ggYXV0aC10aW1lb3V0IDMwCmlwIHNzaCB0aW1lb3V0IDYwMApob3N0bmFtZSAiZWtpMyIKaW50ZXJmYWNlIGdpZ2FiaXRldGhlcm5ldCAwLzAKIGlwIGFkZHJlc3MgMTk4LjE5LjQ1LjIgMjU1LjI1NS4wLjAKZXhpdAppcCByb3V0ZSAwLjAuMC4wIDAuMC4wLjAgMTk4LjE5LjQ1LjI1MwoK"
+                            }
+                        }
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab:444\/p-qhbkj-vnf-ucpeos\/OneOS-vCPE-x86_pi1-6.6.1m2.qcow2"
+                        },
+                        "checksum-type": {
+                            "value": "sha256"
+                        },
+                        "checksum": {
+                            "value": "835d157c8ca3a277b17140efd856b137b78e7290cd90c89b77236c616ecba195"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "Diskvnf"
+                        },
+                        "include-in-snapshot": {
+                            "value": 1
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf3_ge_0_0"
+                        },
+                        "master-interface": {
+                            "value": "eth3"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf1"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf120230724204050",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "4608",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "MiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "4",
+                "nsd": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough",
+                "nsd": "1"
+            },
+            "cpu-pinning": {
+                "items": [
+                    {
+                        "id": {
+                            "value": 0
+                        },
+                        "cpuset": {
+                            "value": "2"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 1
+                        },
+                        "cpuset": {
+                            "value": "3"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 2
+                        },
+                        "cpuset": {
+                            "value": "14"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 3
+                        },
+                        "cpuset": {
+                            "value": "15"
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "pathnames": {
+                    "items": [
+                        {
+                            "location": {
+                                "value": "\/openstack\/latest\/user_data"
+                            },
+                            "template-definition": {
+                                "value": "base64_encoded_content"
+                            },
+                            "template-content": {
+                                "value": "CiNWTSBjb25maWcgZmlsZQpjb25maWcgdGVybWluYWwKY3J5cHRvIGtleSBnZW5lcmF0ZSBkc2EgMjA0OCBuby1jb25maXJtCmlwIHNzaCBlbmFibGUKYmluZCBzc2ggZ2lnYWJpdGV0aGVybmV0IDAvMAppcCBzc2ggYXV0aC1tZXRob2QgYXV0b21hdGljCmlwIHNzaCBhdXRoLXJldHJpZXMgMwppcCBzc2ggYXV0aC10aW1lb3V0IDMwCmlwIHNzaCB0aW1lb3V0IDYwMApob3N0bmFtZSAiZWtpMSIKaW50ZXJmYWNlIGdpZ2FiaXRldGhlcm5ldCAwLzAKIGlwIGFkZHJlc3MgZGhjcApleGl0Cgo="
+                            }
+                        }
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab:444\/p-qhbkj-vnf-ucpeos\/OneOS-vCPE-x86_pi1-6.6.1m2.qcow2"
+                        },
+                        "checksum-type": {
+                            "value": "sha256"
+                        },
+                        "checksum": {
+                            "value": "835d157c8ca3a277b17140efd856b137b78e7290cd90c89b77236c616ecba195"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "Diskvnf"
+                        },
+                        "include-in-snapshot": {
+                            "value": 1
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf1_ge_0_0"
+                        },
+                        "master-interface": {
+                            "value": "eth0"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_ge_0_1"
+                        },
+                        "master-interface": {
+                            "value": "eth3"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

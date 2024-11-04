@@ -1,0 +1,1668 @@
+{
+    "version": "1.0",
+    "nsd": {
+        "version": 3,
+        "properties": {
+            "name": "NSD_uCPE4QA0000106_20230724_205730",
+            "version": "1.0",
+            "description": "NSD for uCPE with serial number 000618670811338",
+            "software_min": "DM53:3.7.4",
+            "hardware": [
+                "OVP-824"
+            ]
+        }
+    },
+    "general": {
+        "id": {
+            "value": "D2_uCPE4QA0000106"
+        },
+        "description": {
+            "value": ""
+        },
+        "open-vswitch": {
+            "pmd-cpu-mask": {
+                "value": 8194
+            }
+        }
+    },
+    "objects": [
+        {
+            "type": {
+                "value": "ovp"
+            },
+            "autoconf": {
+                "polling-period": {
+                    "value": "21600",
+                    "nsd": "1"
+                },
+                "retry-count": {
+                    "value": "3",
+                    "nsd": "1"
+                },
+                "retry-delay": {
+                    "value": "10",
+                    "nsd": "1"
+                },
+                "device-certificate": {
+                    "pki-certificate-name": {
+                        "value": "FACTORY"
+                    },
+                    "pki-key-label": {
+                        "value": "factory_cert_key1"
+                    }
+                },
+                "authentication-method": {
+                    "value": "certificate"
+                },
+                "ca-store": {
+                    "value": "ca-local-data"
+                },
+                "ca-data": {
+                    "value": "-----BEGIN CERTIFICATE-----\nMIIFsDCCA5igAwIBAgIBADANBgkqhkiG9w0BAQ0FADBdMQswCQYDVQQGEwJGUjEP\nMA0GA1UECgwGT3JhbmdlMRgwFgYDVQQLDA9GUiA4OSAzODAxMjk4NjYxIzAhBgNV\nBAMMGk9yYW5nZSBJbnRlcm5hbCBHMiBSb290IENBMB4XDTE2MDUwMjExMzgwN1oX\nDTQxMDUwMjExMzgwN1owXTELMAkGA1UEBhMCRlIxDzANBgNVBAoMBk9yYW5nZTEY\nMBYGA1UECwwPRlIgODkgMzgwMTI5ODY2MSMwIQYDVQQDDBpPcmFuZ2UgSW50ZXJu\nYWwgRzIgUm9vdCBDQTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAOCL\n6xok2VzVyHsl9RucKjtEALfI1Cx9uu1AbflfsVP4YEpOHtDW4yfr39uSB9NvjVRJ\n8LPteLbsuCHaaDM6D4urluhjS73C2vorMEElgCCG1sjHa0pXDLVG7H9CegqlyZtn\nvbzquJbYsCZaywBYx4pVoe0JvPJKI7\/nvE2IdI0Ue9Pr4v0nUiJhzZG1S04mDw4E\nMlTvW60lFLqnqXDA0itIJfpAwbAFqw1xsvFxXBnC\/vUUbQctOi7je8YC\/p5w0aoJ\no2wGkgDw2bGpO1VaeyfxTtyf41RUC2wuV9bO2vhV1aWf0vp59zybMlL\/pMTmiaoa\nrVQr8aE\/RGujn\/mMqzT4JVmiCmD5bPy2OVKJnch7L\/RNI\/LropF17lPzpXboqk8M\n2K2+T7AxIJ0voanaxPXdZFElhxCg\/XW04OaVrN4dO1x3njjR2MNizFhe79NZ7LEd\nefltcg11IXC6dKtCgs0\/GLu6I6nYuSLRq6N5nwAs017IJw1RSFT2SYS6g6JjiAT+\nmr3dqXBSsNwRBug8oPxm82VNUHNcj\/LqNYr8EEDqICd8PtRbEA6pSXMzxqO2zcRE\nDprWOUpL47Y5CKpcG5R+stezHgXM8ArsmT2A05+CQ3vey6pp\/10q80gZ11iJDIqv\nGVVQvcvBqQ+0Eo2Rr5Kv9lPbzIvshxr6gSeEHo8nAgMBAAGjezB5MA8GA1UdEwEB\n\/wQFMAMBAf8wDgYDVR0PAQH\/BAQDAgEGMB0GA1UdDgQWBBTGON+k2onDjBtKS2UH\nJa+z1LZHgjAfBgNVHSMEGDAWgBTGON+k2onDjBtKS2UHJa+z1LZHgjAWBgNVHSAE\nDzANMAsGCSqBegEQDAoBATANBgkqhkiG9w0BAQ0FAAOCAgEAHm5FZlDv+2pzV7f4\nhfEDYWwFn2Lbqyn\/Y8BsiyfvTX11AYOw41OeFLrk3FFM6+iLb14DXQcTwHjBux+2\nhtH4T3jyPeBmsnRzuxsb61TqYO1TnId8zzroyPTT+MHABmETyUf9uuSispNgJJXk\nYYxpVPVLUZNtSuoDuVkjHJOQ0NRTB+1XzfShuSwI4vtttlhRg6qVvgjnyP2tR8BY\nwkHWI+iHM8VUwoZYIyk3zRbFTdqWEyebUAm2aJ7LguroMTZ71ZxvD\/LJfHybj8Hb\nrm2Tk+Dq5gvBiggfgs23lx2uWBJbMa8F7I7JH\/+YsvwXmlQSkDPDcUopKestiKVb\nfAhY1NRDqMlwkOLLrGxPjAKCDYwVkxz0pkLnWDiDRNpLlDpJ6x3+dOX34vi+K3dq\nwl73JXdXo4NEXswVsVM8fD+cdHluS74pemMf\/7olUfd60YYC+6RwQRyP\/4I0WaNs\n6D4B8R3rc\/X1obgvx6NfF55mFEwW3yhxRLjux5sYEBfkT8tTllVcRUwJCQumLUS9\nrnrCMsDkBfI\/ZN+ITBcWi6cAyOcsIOk4up9aUvNJTMKUlEybDNN8cDp9+vLonN2h\nYMg1IfJ+IZs6x3rDr5MXuWTks34hEJidpmOTmOyy\/QPHCK0BGRmUoYJr4CHS4FL2\nBtsnCPyUUO4gppjywfYrotQ2gTQ=\n-----END CERTIFICATE-----"
+                },
+                "ignore-cert-check": {
+                    "value": false
+                },
+                "strict-ssl": {
+                    "value": true
+                },
+                "advertise-local-config": {
+                    "value": false
+                },
+                "manager": {
+                    "items": [
+                        {
+                            "name": {
+                                "value": "OneManage"
+                            },
+                            "url": {
+                                "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab\/OneManage\/bootstrap\/server.php",
+                                "nsd": "2"
+                            }
+                        }
+                    ]
+                }
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_ovp"
+                        },
+                        "use-dhcp": {
+                            "value": 1,
+                            "nsd": "1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth8"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth9"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth10"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth10"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth11"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth11"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth0"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth2"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth3"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth4"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth5"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth6"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "phys"
+            },
+            "name": {
+                "value": "eth7"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "type": {
+                            "value": "dpdk"
+                        },
+                        "mtu": {
+                            "value": "1600"
+                        },
+                        "link": {
+                            "value": "link_eth7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth8"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth8"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth9"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth9"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth10"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth10"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth11"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth11"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth0"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth0"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_ge_0_0"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth1"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth2"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth2"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "NET_wan"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "vlan-mode": {
+                            "value": "vlan-mode-access",
+                            "nsd": "1"
+                        },
+                        "tag": {
+                            "value": "3999",
+                            "nsd": "1"
+                        },
+                        "link": {
+                            "value": "link_ovp"
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_eth3"
+                        }
+                    },
+                    {
+                        "vlan-mode": {
+                            "value": "vlan-mode-trunk",
+                            "nsd": "1"
+                        },
+                        "allow-any-vlan": {
+                            "value": "1",
+                            "nsd": "1"
+                        },
+                        "deny": {
+                            "items": [
+                                {
+                                    "tag": {
+                                        "value": 3999
+                                    }
+                                }
+                            ],
+                            "nsd": "1"
+                        },
+                        "link": {
+                            "value": "link_vnf1_ge_0_1"
+                        }
+                    },
+                    {
+                        "vlan-mode": {
+                            "value": "vlan-mode-trunk",
+                            "nsd": "1"
+                        },
+                        "allow-any-vlan": {
+                            "value": "1",
+                            "nsd": "1"
+                        },
+                        "deny": {
+                            "items": [
+                                {
+                                    "tag": {
+                                        "value": 3999
+                                    }
+                                }
+                            ],
+                            "nsd": "1"
+                        },
+                        "link": {
+                            "value": "link_vnf2_ge_0_0"
+                        }
+                    },
+                    {
+                        "vlan-mode": {
+                            "value": "vlan-mode-trunk",
+                            "nsd": "1"
+                        },
+                        "allow-any-vlan": {
+                            "value": "1",
+                            "nsd": "1"
+                        },
+                        "deny": {
+                            "items": [
+                                {
+                                    "tag": {
+                                        "value": 3999
+                                    }
+                                }
+                            ],
+                            "nsd": "1"
+                        },
+                        "link": {
+                            "value": "link_vnf3_ge_0_0"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth4"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth4"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth5"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth5"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth6"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth6"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "switch"
+            },
+            "name": {
+                "value": "LAN_eth7"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_eth7"
+                        }
+                    },
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf2"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf220230724205227",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "4608",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "MiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "4",
+                "nsd": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough",
+                "nsd": "1"
+            },
+            "cpu-pinning": {
+                "items": [
+                    {
+                        "id": {
+                            "value": 0
+                        },
+                        "cpuset": {
+                            "value": "4"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 1
+                        },
+                        "cpuset": {
+                            "value": "5"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 2
+                        },
+                        "cpuset": {
+                            "value": "16"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 3
+                        },
+                        "cpuset": {
+                            "value": "17"
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "pathnames": {
+                    "items": [
+                        {
+                            "location": {
+                                "value": "\/openstack\/latest\/user_data"
+                            },
+                            "template-definition": {
+                                "value": "base64_encoded_content"
+                            },
+                            "template-content": {
+                                "value": "CiNWTSBjb25maWcgZmlsZQpjb25maWcgdGVybWluYWwKY3J5cHRvIGtleSBnZW5lcmF0ZSBkc2EgMjA0OCBuby1jb25maXJtCmlwIHNzaCBlbmFibGUKYmluZCBzc2ggZ2lnYWJpdGV0aGVybmV0IDAvMC4zOTk4CmlwIHNzaCBhdXRoLW1ldGhvZCBhdXRvbWF0aWMKaXAgc3NoIGF1dGgtcmV0cmllcyAzCmlwIHNzaCBhdXRoLXRpbWVvdXQgMzAKaXAgc3NoIHRpbWVvdXQgNjAwCmhvc3RuYW1lICJla2kyIgppbnRlcmZhY2UgZ2lnYWJpdGV0aGVybmV0IDAvMC4zOTk4CiBlbmNhcHN1bGF0aW9uIGRvdDFxIDM5OTgKIGlwIGFkZHJlc3MgMTMuMTMuMTMuMiAyNTUuMjU1LjI1NS4wCmV4aXQKaXAgcm91dGUgMC4wLjAuMCAwLjAuMC4wIDEzLjEzLjEzLjQKCg=="
+                            }
+                        }
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab:444\/p-qhbkj-vnf-ucpeos\/OneOS-vCPE-x86_pi1-6.6.1m2.qcow2"
+                        },
+                        "checksum-type": {
+                            "value": "sha256"
+                        },
+                        "checksum": {
+                            "value": "835d157c8ca3a277b17140efd856b137b78e7290cd90c89b77236c616ecba195"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "Diskvnf"
+                        },
+                        "include-in-snapshot": {
+                            "value": 1
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf2_ge_0_0"
+                        },
+                        "master-interface": {
+                            "value": "eth3"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf3"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf320230724205731",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "4608",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "MiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "4",
+                "nsd": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough",
+                "nsd": "1"
+            },
+            "cpu-pinning": {
+                "items": [
+                    {
+                        "id": {
+                            "value": 0
+                        },
+                        "cpuset": {
+                            "value": "6"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 1
+                        },
+                        "cpuset": {
+                            "value": "7"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 2
+                        },
+                        "cpuset": {
+                            "value": "18"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 3
+                        },
+                        "cpuset": {
+                            "value": "19"
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "pathnames": {
+                    "items": [
+                        {
+                            "location": {
+                                "value": "\/openstack\/latest\/user_data"
+                            },
+                            "template-definition": {
+                                "value": "base64_encoded_content"
+                            },
+                            "template-content": {
+                                "value": "CiNWTSBjb25maWcgZmlsZQpjb25maWcgdGVybWluYWwKY3J5cHRvIGtleSBnZW5lcmF0ZSBkc2EgMjA0OCBuby1jb25maXJtCmlwIHNzaCBlbmFibGUKYmluZCBzc2ggZ2lnYWJpdGV0aGVybmV0IDAvMAppcCBzc2ggYXV0aC1tZXRob2QgYXV0b21hdGljCmlwIHNzaCBhdXRoLXJldHJpZXMgMwppcCBzc2ggYXV0aC10aW1lb3V0IDMwCmlwIHNzaCB0aW1lb3V0IDYwMApob3N0bmFtZSAiZWtpMyIKaW50ZXJmYWNlIGdpZ2FiaXRldGhlcm5ldCAwLzAKIGlwIGFkZHJlc3MgMTk4LjE5LjQ1LjIgMjU1LjI1NS4wLjAKZXhpdAppcCByb3V0ZSAwLjAuMC4wIDAuMC4wLjAgMTk4LjE5LjQ1LjI1MwoK"
+                            }
+                        }
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab:444\/p-qhbkj-vnf-ucpeos\/OneOS-vCPE-x86_pi1-6.6.1m2.qcow2"
+                        },
+                        "checksum-type": {
+                            "value": "sha256"
+                        },
+                        "checksum": {
+                            "value": "835d157c8ca3a277b17140efd856b137b78e7290cd90c89b77236c616ecba195"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "Diskvnf"
+                        },
+                        "include-in-snapshot": {
+                            "value": 1
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf3_ge_0_0"
+                        },
+                        "master-interface": {
+                            "value": "eth3"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": {
+                "value": "vnf"
+            },
+            "name": {
+                "value": "vnf1"
+            },
+            "uuid-persistence": {
+                "value": "permanent"
+            },
+            "persistence-id": {
+                "value": "vnf120230724204050",
+                "nsd": "1"
+            },
+            "state": {
+                "value": "running",
+                "nsd": "1"
+            },
+            "memory": {
+                "value": "4608",
+                "nsd": "1"
+            },
+            "memory-unit": {
+                "value": "MiB",
+                "nsd": "1"
+            },
+            "nof-vcpus": {
+                "value": "4",
+                "nsd": "1"
+            },
+            "cpu-mode": {
+                "value": "host-passthrough",
+                "nsd": "1"
+            },
+            "cpu-pinning": {
+                "items": [
+                    {
+                        "id": {
+                            "value": 0
+                        },
+                        "cpuset": {
+                            "value": "2"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 1
+                        },
+                        "cpuset": {
+                            "value": "3"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 2
+                        },
+                        "cpuset": {
+                            "value": "14"
+                        }
+                    },
+                    {
+                        "id": {
+                            "value": 3
+                        },
+                        "cpuset": {
+                            "value": "15"
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "customization": {
+                "pathnames": {
+                    "items": [
+                        {
+                            "location": {
+                                "value": "\/openstack\/latest\/user_data"
+                            },
+                            "template-definition": {
+                                "value": "base64_encoded_content"
+                            },
+                            "template-content": {
+                                "value": "CiNWTSBjb25maWcgZmlsZQpjb25maWcgdGVybWluYWwKY3J5cHRvIGtleSBnZW5lcmF0ZSBkc2EgMjA0OCBuby1jb25maXJtCmlwIHNzaCBlbmFibGUKYmluZCBzc2ggZ2lnYWJpdGV0aGVybmV0IDAvMAppcCBzc2ggYXV0aC1tZXRob2QgYXV0b21hdGljCmlwIHNzaCBhdXRoLXJldHJpZXMgMwppcCBzc2ggYXV0aC10aW1lb3V0IDMwCmlwIHNzaCB0aW1lb3V0IDYwMApob3N0bmFtZSAiZWtpMSIKaW50ZXJmYWNlIGdpZ2FiaXRldGhlcm5ldCAwLzAKIGlwIGFkZHJlc3MgZGhjcApleGl0Cgo="
+                            }
+                        }
+                    ]
+                },
+                "variables": {
+                    "items": []
+                }
+            },
+            "disks": {
+                "items": [
+                    {
+                        "location": {
+                            "value": "https:\/\/onemanagesouth-ucpe4owf.rennes.lab:444\/p-qhbkj-vnf-ucpeos\/OneOS-vCPE-x86_pi1-6.6.1m2.qcow2"
+                        },
+                        "checksum-type": {
+                            "value": "sha256"
+                        },
+                        "checksum": {
+                            "value": "835d157c8ca3a277b17140efd856b137b78e7290cd90c89b77236c616ecba195"
+                        },
+                        "bus": {
+                            "value": "virtio"
+                        },
+                        "disk-profile": {
+                            "value": "builtin-disk-profile-type"
+                        },
+                        "builtin-disk-profile": {
+                            "value": "Diskvnf"
+                        },
+                        "include-in-snapshot": {
+                            "value": 1
+                        },
+                        "is-customization-image": {
+                            "value": 0
+                        }
+                    }
+                ],
+                "nsd": "1"
+            },
+            "ports": {
+                "items": [
+                    {
+                        "link": {
+                            "value": "link_vnf1_ge_0_0"
+                        },
+                        "master-interface": {
+                            "value": "eth0"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "link": {
+                            "value": "link_vnf1_ge_0_1"
+                        },
+                        "master-interface": {
+                            "value": "eth3"
+                        },
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    },
+                    {
+                        "model-type": {
+                            "value": "virtio"
+                        },
+                        "type": {
+                            "value": "vhostuser"
+                        },
+                        "mac-type": {
+                            "value": "permanent"
+                        },
+                        "driver-queue": {
+                            "value": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
